@@ -1,0 +1,26 @@
+@import url(../globalStyles.css);
+
+button {
+    height: 2rem;
+
+    padding-inline: 0.875rem;
+
+    border: .0938rem solid transparent;
+    border-radius: .5rem;
+
+    font-size: var(--font-size-3);
+    font-weight: var(--font-weight-1);
+
+    cursor: pointer;
+}
+
+.primary-button {
+    background-color: var(--color-brand-1);
+    color: var(--color-mode);
+
+    transition: background-color 0.2s;
+}
+
+.primary-button:is(:hover,:active) {
+    background-color: var(--color-brand-2);
+}
