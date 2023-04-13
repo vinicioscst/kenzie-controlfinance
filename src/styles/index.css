@@ -1,16 +1,17 @@
 @import url(reset.css);
 @import url(globalStyles.css);
 @import url(./components/buttons.css);
+@import url(./components/inputs.css);
 
 
-.app-header {
+.app__header {
     width: 100%;
     position: sticky;
 
     background-color: var(--color-grey-5);
 }
 
-.app-header__container {
+.app__header--container {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -18,14 +19,32 @@
 
     height: 8.25rem;
 
-    padding: 0 1rem;
+    margin: 0 1rem;
 }
 
-.app-title {
+.app__title {
     font-size: var(--font-size-1);
     font-weight: var(--font-weight-1);
 }
 
-.app-title span {
+.app__title span {
     color: var(--color-brand-1);
+}
+
+#app {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+    margin: 1.75rem 1rem;
+}
+
+#app .finance__header {
+    display: flex;
+    flex-direction: column;
+    gap: 2.375rem;
+}
+
+#app .finance__header h2 {
+    font-size: var(--font-size-2);
+    font-weight: var(--font-weight-2);
 }

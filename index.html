@@ -18,18 +18,55 @@
     <link rel="stylesheet" href="./src/styles/index.css" />
   </head>
   <body>
-    <header class="app-header">
-      <div class="app-header__container">
-        <h1 class="app-title"><span>Control</span> Finance</h1>
+    <header class="app__header">
+      <div class="app__header--container">
+        <h1 class="app__title"><span>Control</span> Finance</h1>
         <button class="primary-button">Registrar novo valor</button>
       </div>
     </header>
     <main id="app">
-
+      <section class="finance__header">
+        <h2>Resumo financeiro</h2>
+        <div class="filter__menu">
+          <label for="todos">Todos</label>
+          <input type="radio" name="filter" value="todos" id="todos" />
+          <label for="entradas">Entradas</label>
+          <input type="radio" name="filter" value="entradas" id="entradas" categoryID="0"/>
+          <label for="saidas">Saídas</label>
+          <input type="radio" name="filter" value="saídas" id="saidas" categoryID="1"/>
+        </div>
+      </section>
+      <section class="finance__summary">
+        <p class="summary__title">Soma dos valores</p>
+        <p class="summary__value">R$ 0</p>
+      </section>
+      <section class="finance__entries">
+        <ul class="entries__list">
+        </ul>
+      </section>
     </main>
 
-    <script src="./src/scripts/modal.js"></script>
-    <script src="./src/scripts/valuesData.js"></script>
-    <script src="./src/scripts/index.js"></script>
+    <dialog class="modal__controller">
+      <div class="modal__container">
+        <div class="modal__header">
+          <h2>Registro de valor</h2>
+          <button class="button__greylow">X</button>
+        </div>
+        <p>Digite o valor e em seguida aperte no botão referente ao tipo do valor</p>
+        <form>
+          <label for="number">Valor</label>
+          <input type="number" name="" id="number" placeholder="00,00">
+          <p>Tipo de valor</p>
+          <label for="entrada">Entrada</label>
+          <input type="radio" id="entrada" name="valueType" value="0">
+          <label for="saida">Saída</label>
+          <input type="radio" id="saida" name="valueType" value="1">
+          <button class="button__greylow">Cancelar</button>
+          <button type="submit">Inserir valor</button>
+        </form>
+      </div>
+    </dialog>
+
+    <script type="module" src="./src/scripts/index.js"></script>
   </body>
 </html>
