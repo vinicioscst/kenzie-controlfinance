@@ -1,4 +1,88 @@
-/* input[type='radio'] {
+@import url(../globalStyles.css);
+
+.modal__container > form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5625rem;
+}
+
+.modal__container > form > .value__container {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.modal__container > form > .value__container > label {
+    font-size: var(--font-size-3);
+    font-weight: var(--font-weight-2);
+}
+
+.modal__container > form > .value__container > input {
     appearance: none;
+    outline: none;
+
+    padding: .7125rem 0 .7125rem .75rem;
+
+    border: .0938rem solid var(--color-grey-3);
+    border-radius: var(--radius-1);
+
+    font-size: var(--font-size-3);
+    color: var(--color-grey-2);
+
+    transition: border 0.2s;
+}
+
+.modal__container > form > .value__container > input:hover {
+    border: .0938rem solid var(--color-brand-1);
+}
+
+.modal__container > form > .value__container > input:focus {
+    border: .0938rem solid var(--color-brand-1);
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
     -webkit-appearance: none;
-} */
+}
+
+.modal__container > form > .value__container > p {
+    font-size: var(--font-size-3);
+    font-weight: var(--font-weight-2);
+}
+
+.modal__container > form > .category__container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.modal__container > form > .category__container > p {
+    font-size: var(--font-size-3);
+    font-weight: var(--font-weight-2);
+}
+
+.modal__container > form > .category__container > label {
+    width: 100%;
+    
+    padding: .4688rem 0;
+    
+    border: .0938rem solid var(--color-grey-5);
+    border-radius: var(--radius-1);
+    
+    text-align: center;
+    font-size: var(--font-size-3);
+    color: var(--color-grey-2);
+    font-weight: var(--font-weight-1);
+
+    cursor: pointer;
+
+    transition: border 0.2s;
+}
+
+.modal__container > form > .category__container > input:hover+label {
+    border: .0938rem solid var(--color-brand-1);
+}
+
+.modal__container > form > .category__container > input:checked+label {
+    border: .0938rem solid var(--color-brand-1);
+}

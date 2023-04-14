@@ -40,7 +40,7 @@ body {
   font-family: var(--font-family-1);
   color: var(--color-grey-1)
 }
-
+/* 
 .container {
   max-width: 43rem;
   margin: 0 auto;
@@ -51,4 +51,4 @@ body {
     max-width: 43rem;
     margin: 0 1rem;
   }
-}
+} */

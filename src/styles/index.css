@@ -2,6 +2,7 @@
 @import url(globalStyles.css);
 @import url(./components/buttons.css);
 @import url(./components/inputs.css);
+@import url(./components/modal.css);
 
 
 .app__header {
@@ -47,4 +48,117 @@
 #app .finance__header h2 {
     font-size: var(--font-size-2);
     font-weight: var(--font-weight-2);
+}
+
+.finance__summary {
+    display: flex;
+    justify-content: space-between;
+
+    padding: .8438rem 1rem;
+
+    background-color: var(--color-grey-5);
+
+    border: .0938rem solid var(--color-grey-4);
+    border-radius: var(--radius-1);
+
+    font-size: var(--font-size-3);
+    font-weight: var(--font-weight-2);
+}
+
+.finance__entries > .entries__list--empty {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    height: 5.25rem;
+
+    background-color: var(--color-grey-5);
+
+    border: .0938rem dashed var(--color-grey-3);
+    border-radius: var(--radius-1);
+
+    text-align: center;
+
+    cursor: pointer;
+}
+
+.finance__entries > .entries__list--empty > h3 {
+    font-size: var(--font-size-2);
+    font-weight: var(--font-weight-1);
+    color: var(--color-grey-1)
+}
+
+.finance__entries > .entries__list--empty > p {
+    font-size: var(--font-size-3);
+    font-weight: var(--font-weight-2);
+    color: var(--color-grey-2)
+}
+
+.finance__entries > .entries__list {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 1.25rem;
+}
+
+.entries__list > .entry__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0.5rem 1rem;
+
+    background-color: var(--color-mode);
+
+    border: .0938rem solid var(--color-grey-5);
+    border-radius: var(--radius-1);
+
+    font-weight: var(--font-weight-2);
+
+    transition: all 0.2s;
+}
+
+.entries__list > .entry__container:hover {
+    border: .0938rem solid var(--color-brand-1);
+}
+
+.entry__container > .entry__value {
+    font-size: var(--font-size-3);
+}
+
+.entry__container > .entry__info {
+    display: flex;
+    align-items: center;
+    gap: 1.9844rem;
+}
+
+.entry__container > .entry__info > .entry__type {
+    width: 4.25rem;
+    height: 1.625rem;
+
+    background-color: var(--color-grey-4);
+    color: var(--color-grey-2);
+    
+    border-radius: var(--radius-1);
+
+    font-size: var(--font-size-4);
+    text-align: center;
+}
+
+.entry__container > .entry__info > .entry__remove {
+    height: 1.625rem;
+
+    background: url('../assets/trash_default.svg'), var(--color-mode);
+    background-position: center;
+    background-repeat: no-repeat;
+
+    border: .0938rem solid var(--color-grey-5);
+
+    transition: all 0.2s;
+}
+
+.entry__container > .entry__info > .entry__remove:hover {
+    background: url('../assets/trash_hover.svg'), var(--color-grey-5);
+    background-position: center;
+    background-repeat: no-repeat;
+    border: .0938rem solid var(--color-grey-4);
 }

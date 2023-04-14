@@ -1,0 +1,42 @@
+@import url(../globalStyles.css);
+
+.modal__controller {
+    padding: 0;
+
+    background-color: var(--color-mode);
+
+    border: 0;
+    border-radius: var(--radius-1);
+}
+
+.modal__controller::backdrop {
+    background-color: rgba(33, 37, 41, 0.5);
+}
+
+.modal__container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5625rem;
+
+    padding: 1.5rem;
+}
+
+.modal__container > .modal__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal__container > .modal__header h2 {
+    font-size: var(--font-size-2);
+    font-weight: var(--font-weight-1);
+}
+
+.modal__container > .modal__header > .greylow-button {
+    font-family: var(--font-family-2);
+    font-size: var(--font-size-2);
+}
+
+.modal__container > p {
+    font-size: var(--font-size-3);
+}

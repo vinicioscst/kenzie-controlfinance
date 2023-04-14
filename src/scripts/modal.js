@@ -1,6 +1,6 @@
 /* Desenvolva sua lógica aqui */
 
-export function handleModal () {
+export function handleModalHeader () {
     const button = document.querySelector('.primary-button')
     const modal = document.querySelector('.modal__controller')
 
@@ -9,9 +9,18 @@ export function handleModal () {
     })
 }
 
+export function handleModalMain () {
+    const section = document.querySelector('.entries__list--empty')
+    const modal = document.querySelector('.modal__controller')
+
+    section.addEventListener('click', () => {
+        modal.showModal()
+    })
+}
+
 export function closeModal () {
 
-    const buttons = document.querySelectorAll('.button__greylow')
+    const buttons = document.querySelectorAll('.greylow-button')
     const modal = document.querySelector('.modal__controller')
 
     buttons.forEach(button => {

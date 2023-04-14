@@ -28,12 +28,15 @@
       <section class="finance__header">
         <h2>Resumo financeiro</h2>
         <div class="filter__menu">
-          <label for="todos">Todos</label>
-          <input type="radio" name="filter" value="todos" id="todos" />
+          <!-- <label for="todos">Todos</label>
+          <input type="radio" name="filter" value="todos" id="todos" hidden/>
           <label for="entradas">Entradas</label>
-          <input type="radio" name="filter" value="entradas" id="entradas" categoryID="0"/>
+          <input type="radio" name="filter" value="entradas" id="entradas" categoryID="0" hidden/>
           <label for="saidas">Saídas</label>
-          <input type="radio" name="filter" value="saídas" id="saidas" categoryID="1"/>
+          <input type="radio" name="filter" value="saídas" id="saidas" categoryID="1" hidden/> -->
+          <button class="outline-button" categoryID="all">Todos</button>
+          <button class="outline-button" categoryID="0">Entradas</button>
+          <button class="outline-button" categoryID="1">Saídas</button>
         </div>
       </section>
       <section class="finance__summary">
@@ -41,8 +44,11 @@
         <p class="summary__value">R$ 0</p>
       </section>
       <section class="finance__entries">
-        <ul class="entries__list">
-        </ul>
+        <div class="entries__list--empty">
+          <h3>Nenhum valor registrado</h3>
+          <p>Registrar novo valor</p>
+        </div>
+        <ul class="entries__list"></ul>
       </section>
     </main>
 
@@ -50,19 +56,34 @@
       <div class="modal__container">
         <div class="modal__header">
           <h2>Registro de valor</h2>
-          <button class="button__greylow">X</button>
+          <button class="greylow-button">X</button>
         </div>
-        <p>Digite o valor e em seguida aperte no botão referente ao tipo do valor</p>
+        <p>
+          Digite o valor e em seguida aperte no botão referente ao tipo do valor
+        </p>
         <form>
-          <label for="number">Valor</label>
-          <input type="number" name="" id="number" placeholder="00,00">
-          <p>Tipo de valor</p>
-          <label for="entrada">Entrada</label>
-          <input type="radio" id="entrada" name="valueType" value="0">
-          <label for="saida">Saída</label>
-          <input type="radio" id="saida" name="valueType" value="1">
-          <button class="button__greylow">Cancelar</button>
-          <button type="submit">Inserir valor</button>
+          <div class="value__container">
+            <label for="number">Valor</label>
+            <input type="number" name="" id="number" class="entry__category" placeholder="00,00" />
+          </div>
+          <div class="category__container">
+            <p>Tipo de valor</p>
+            <input
+            type="radio"
+            id="entrada"
+            name="valueType"
+            value="0"
+            class="entry__category"
+            hidden
+            />
+            <label for="entrada">Entrada</label>
+            <input type="radio" id="saida" name="valueType" value="1" class="entry__category" hidden/>
+            <label for="saida">Saída</label>
+          </div>
+          <div class="buttons__container">
+            <button class="greylow-button">Cancelar</button>
+            <button class="primary-button" type="submit">Inserir valor</button>
+          </div>
         </form>
       </div>
     </dialog>
