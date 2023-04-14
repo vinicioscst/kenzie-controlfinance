@@ -33,6 +33,8 @@ export function registerValue(array) {
       return alert("Preencha o valor e defina o tipo");
     }
 
+    inputNumber.value = ''
+
     array.push(newEntry);
     newEntry = {};
 
