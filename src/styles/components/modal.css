@@ -7,6 +7,8 @@
 
     border: 0;
     border-radius: var(--radius-1);
+
+    animation: modal-animation 0.1s ease-in-out;
 }
 
 .modal__controller::backdrop {
@@ -40,3 +42,9 @@
 .modal__container > p {
     font-size: var(--font-size-3);
 }
+
+
+@keyframes modal-animation {
+    0% { margin: -100rem auto; }
+    100% { margin: 0 auto; }
+  }

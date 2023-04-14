@@ -21,7 +21,11 @@
     appearance: none;
     outline: none;
 
-    padding: .7125rem 0 .7125rem .75rem;
+    background: url(../../assets/input_icon.svg), transparent;
+    background-position: .75rem;
+    background-repeat: no-repeat;
+
+    padding: .7125rem 0 .7125rem 2.5625rem;
 
     border: .0938rem solid var(--color-grey-3);
     border-radius: var(--radius-1);
@@ -84,5 +88,38 @@ input::-webkit-inner-spin-button {
 }
 
 .modal__container > form > .category__container > input:checked+label {
+    border: .0938rem solid var(--color-brand-1);
+}
+
+.app > .finance__header > .filter__menu > label {
+     height: 2rem;
+
+    padding-inline: 0.875rem;
+
+    border: .0938rem solid var(--color-grey-5);
+    border-radius: var(--radius-1);
+    
+    background-color: var(--color-mode);
+    color: var(--color-grey-2); 
+
+    font-size: var(--font-size-3);
+    font-weight: var(--font-weight-1);
+
+    cursor: pointer;
+
+    transition: all 0.2s;
+}
+
+.app > .finance__header > .filter__menu > input:hover+label {
+    background-color: var(--color-brand-3);
+    color: var(--color-brand-1); 
+
+    border: .0938rem solid var(--color-brand-1);
+}
+
+.app > .finance__header > .filter__menu > input:checked+label {
+    background-color: var(--color-brand-3);
+    color: var(--color-brand-1); 
+
     border: .0938rem solid var(--color-brand-1);
 }

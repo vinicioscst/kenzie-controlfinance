@@ -162,3 +162,7 @@
     background-repeat: no-repeat;
     border: .0938rem solid var(--color-grey-4);
 }
+
+.hide {
+    display: none;
+}

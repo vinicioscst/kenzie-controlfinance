@@ -1,55 +1,44 @@
-import {renderEntries, entriesSum} from './render.js'
-
+import { renderEntries, entriesSum } from "./render.js";
 
 export function registerValue(array) {
+  const modal = document.querySelector(".modal__controller");
+  const inputNumber = document.querySelector(".value__container .entry__category");
+  const inputRadios = document.querySelectorAll(".category__container input[type=radio]");
+  const registerButton = document.querySelector("form > .buttons__container > button[type=submit]");
 
-    const modal = document.querySelector(".modal__controller")
-    const inputs = document.querySelectorAll(".entry__category")
-    const registerButton = document.querySelector('form > .buttons__container > button[type=submit]')
+  let newEntry = {};
+  let count = 0;
+  
+  registerButton.addEventListener("click", (event) => {
+    event.preventDefault();
 
-    let newEntry = {}
-    let count = 0
     
+    newEntry.id = array.length + 1
+    newEntry.value = Number(inputNumber.value)
+    
+    inputRadios.forEach((inputRadio) => {
 
-    registerButton.addEventListener('click', (event) => {
+      if (inputRadio.checked === true) {
+        newEntry.categoryID = Number(inputRadio.value);
+      }
+    });
+    
+    if (inputNumber.value === "") {
+      count++;
+    }
 
-        event.preventDefault()
+    if (count !== 0) {
+      count = 0;
 
-        newEntry.id = array.length + 1
+      return alert("Preencha o valor e defina o tipo");
+    }
 
-        inputs.forEach((input) => {
+    array.push(newEntry);
+    newEntry = {};
 
-          console.log(input)  
-          
-            if (input.value === "") {
-              count++;
-            }
-            
-            if (input.type === "number") {
-                newEntry.value = Number(input.value);
-              } else if (input.name === "valueType"){
-                newEntry.categoryID = Number(input.value);
-              }
-            })
+    renderEntries(array);
+    entriesSum(array);
 
-            if (count !== 0) {
-                count = 0
-          
-                return alert("Preencha o valor e defina o tipo")
-              }
-
-              array.push(newEntry)
-              newEntry = {}
-
-              inputs.forEach((input) => {
-                if (input.type === "number") {
-                    input.value = ""
-                }
-              });
-
-              renderEntries(array);
-              entriesSum(array)
-          
-        modal.close()
-    })
+    modal.close();
+  });
 }
