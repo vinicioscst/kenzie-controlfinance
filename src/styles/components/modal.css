@@ -47,4 +47,14 @@
 @keyframes modal-animation {
     0% { margin: -100rem auto; }
     100% { margin: 0 auto; }
-  }
+}
+
+
+
+/* Media Queries */
+
+@media (min-width: 1024px) {
+    .modal__controller {
+        max-width: 430px;
+    }
+}

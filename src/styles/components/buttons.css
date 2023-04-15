@@ -3,7 +3,7 @@
 button {
     height: 2rem;
 
-    padding-inline: 0.875rem;
+    padding: 0 0.875rem;
 
     border: .0938rem solid transparent;
     border-radius: var(--radius-1);
@@ -23,34 +23,6 @@ button {
 
 .primary-button:is(:hover,:focus) {
     background-color: var(--color-brand-2);
-}
-
-.modal__container > form > .category__container > button {
-    width: 100%;
-    
-    padding: .4688rem 0;
-    
-    border: .0938rem solid var(--color-grey-5);
-    border-radius: var(--radius-1);
-
-    background-color: var(--color-mode);
-    
-    text-align: center;
-    font-size: var(--font-size-3);
-    color: var(--color-grey-2);
-    font-weight: var(--font-weight-1);
-
-    cursor: pointer;
-
-    transition: border 0.2s;
-}
-
-.modal__container > form > .category__container > button:hover {
-    border: .0938rem solid var(--color-brand-1);
-}
-
-.modal__container > form > .category__container > button:checked {
-    border: .0938rem solid var(--color-brand-1);
 }
 
 .greylow-button {
@@ -74,4 +46,21 @@ button {
 
 .buttons__container > button{
     width: 45%;
+}
+
+
+
+/* Media Queries */
+
+@media (min-width: 1024px) {
+
+    .buttons__container {
+        justify-content: flex-end;
+        gap: 1rem;
+    }
+
+    .buttons__container > button{
+        width: max-content;
+    }
+
 }

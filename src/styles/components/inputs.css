@@ -91,10 +91,8 @@ input::-webkit-inner-spin-button {
     border: .0938rem solid var(--color-brand-1);
 }
 
-.app > .finance__header > .filter__menu > label {
-     height: 2rem;
-
-    padding-inline: 0.875rem;
+.filter__menu label {
+    padding: .4375rem .875rem;
 
     border: .0938rem solid var(--color-grey-5);
     border-radius: var(--radius-1);
@@ -110,16 +108,36 @@ input::-webkit-inner-spin-button {
     transition: all 0.2s;
 }
 
-.app > .finance__header > .filter__menu > input:hover+label {
+.filter__menu input:hover+label {
     background-color: var(--color-brand-3);
     color: var(--color-brand-1); 
 
     border: .0938rem solid var(--color-brand-1);
 }
 
-.app > .finance__header > .filter__menu > input:checked+label {
+.filter__menu input:checked+label {
     background-color: var(--color-brand-3);
     color: var(--color-brand-1); 
 
     border: .0938rem solid var(--color-brand-1);
+}
+
+
+
+/* Media Queries */
+
+@media (min-width: 1024px) {
+
+    .modal__container > form > .category__container {
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .modal__container > form > .category__container > label {
+        width: max-content;
+        padding: .3125rem .875rem;
+    }
+
 }
